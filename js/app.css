@@ -1,0 +1,334 @@
+/****************************
+       KEOSU BASE
+****************************/
+
+/***************************
+   MENU
+***************************/
+
+.menu{
+    margin:0 !important;
+}
+
+
+.icons-menu {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block !important;
+}
+
+.classic-menu >.menu {
+	width: 100% !important;
+	padding: 0 15px;
+}
+/*.classic-menu >.menu >.menu-elements {
+	font-size: 24px;
+}*/
+
+.classic-menu>.menu>.menu-elements>a {
+	float: left;
+	position: relative;
+	min-height: 1px;
+	width: 20%;
+}
+
+.menu>.menu-elements>a>img {
+	width: 30px;
+    display: inline !important;
+}
+
+/*.menu>.menu-elements>a>img.active {
+	background-color: #FA6900;
+}*/
+
+@media screen and (min-height: 400px) {
+	.menu>.menu-elements>a>img {
+		width: 30px;
+	}
+}
+
+@media screen and (min-height: 600px) {
+	.menu>.menu-elements>a>img {
+		width: 35px;
+	}
+}
+
+@media screen and (min-height: 800px) {
+	.menu>.menu-elements>a>img {
+		width: 40px;
+	}
+}
+
+@media screen and (min-height: 1000px) {
+	.menu>.menu-elements>a>img {
+		width: 45px;
+	}
+}
+
+.vertical-footer {
+	 position: fixed !important;
+	 height: 100%;
+	 top: 0;
+   	 max-width: 55px;
+}
+
+/***************************
+   UNICORN MENU
+***************************/
+
+
+.lien-menu-bar {
+    text-align: center;
+    float: left;
+    width: 25%;
+    margin-top: 5px;
+}
+
+.active {
+    display:inline !important;
+}
+
+/***************************
+   UNICORN MENU 2
+***************************/
+
+.image-menu-cat{
+	width: 100% !important;
+	height:auto !important;
+}
+
+.menu-elements{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.container-fluid{
+    margin:0 !important;
+    padding:0 !important;
+    }
+
+/***************************
+   MENU LIST
+***************************/
+.item-menu-list {
+    margin:24px !important;
+}
+
+.titre-menu-list {
+    font-size:24px;
+    margin-left:12px;
+}
+
+/****************************
+	COMMENT PLUGIN
+****************************/
+.comment-list {
+    margin-top: 5%
+}
+.add-comment {
+	float: right;
+	margin: 5%;
+}
+
+/****************************
+	SHARE PLUGIN
+****************************/
+
+
+.share-plugin span {
+	width: 100%;
+	text-align: right;
+}
+
+.share-plugin .btn:hover {
+	color: #000000;
+}
+
+.share-plugin .btn:focus, .share-plugin .btn:active {
+	color: #00a0d2;
+}/***************************
+   LIST
+***************************/
+.list {
+	margin: 0px 5px !important;
+	padding: 5px !important;
+	background-color: #ffffff !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.list h6{
+	font-size: 14px;
+}
+
+.list-content {
+	border: none !important;
+}
+
+.list-elements {
+	margin: 0 auto;
+	padding: 0px !important;
+}
+
+.list-title > .ng-scope > h6, h6.title.ng-binding {
+	height:50px;
+	word-wrap: break-word;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+.list-elem-right {
+	color: #bdc3c7 !important;
+}
+
+.list-elem-left {
+}
+
+.list-articles button:first-child {
+    float: left;
+}
+
+.list-articles button:last-child {
+    float: right;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none !important;
+}
+
+.img-min-list {
+    position:relative  !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-height:64px  !important;
+    max-width:128px  !important;
+    overflow:hidden  !important;
+}
+
+.img-min {
+    min-width: 170px;
+    left: -20;
+    height: auto;
+    position:absolute  !important;
+}
+
+img.center, .img-min {
+    width: 100%;
+}
+
+.img-list {
+    list-style-type: none !important;
+    margin: auto 0 !important;
+    padding: 5px !important;
+}
+
+.one-article img, .one-article iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.one-article h4 {
+    text-align: center;
+}
+
+.next_btn {
+    float: right;
+    diplay: inline;
+}
+
+.prev_btn {
+    float: left;
+    diplay: inline;
+}/***************************
+         ARTICLE
+***************************/
+
+.article iframe, .article img {
+    max-width: 100%;
+}/****************************
+	CALENDAR
+****************************/
+.calendar-event, .cal-day-today {
+	background-color: #EA7354;
+	color: #FFFFFF;
+}
+/***************************
+   IMAGE
+***************************/
+.gallery {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.picture-gallery {
+	width: 20%;
+	height: 90px;
+	overflow: hidden;
+	float: left;
+}
+
+.gallery-content {
+	overflow: auto;
+	margin-bottom: 15px;
+}
+
+.picture-horizontal, .picture-vertical {
+	position: relative;
+	max-width: none !important;
+}
+
+.picture-horizontal {
+	height: 90px;
+	width: auto;
+}
+
+.picture-vertical {
+	width: 90px;
+	height: auto;
+}
+
+.photo-full {
+	max-width: 100%;
+	max-height: 100%;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.photo-center {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/***************************
+   THUMBNAILS
+***************************/
+
+.thumbnails-left {
+	 margin:0  !important; 
+	 margin-right:10px  !important;
+}
+/***************************
+   MAP
+***************************/
+#map_canvas {
+	width: 100%;
+	height: 400px;
+	margin: 0;
+}
+

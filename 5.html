@@ -1,0 +1,71 @@
+<nav class="navbar navbar-default navbar-fixed-top classic-navbar" role="banner"><div class="header">
+		<div class="header header-slide" ng-click="menuOpen =!menuOpen" ng-class="{'open' : menuOpen}">
+            <div class="icon-menu2"></div>
+        </div>
+		<div class="title"><b>{{::appName}}</b></div>
+    </div>
+</nav><div class="block-button">
+	<div class="" ng-click="back()" ng-show="closeButton">
+		<span class="glyphicon glyphicon-remove animated fadeIn btn" aria-hidden="true"></span>
+	</div>
+</div>
+<div style="overflow-x: hidden"></div>
+<div class="slide-menu" ng-class="{'open' : menuOpen}">
+	<div id="menu" class="zone" ng-controller="keosu-menuController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":12,"pageId":5,"gadgetParam":{"menu-id":1},"appParam":[]})'><div ng-controller="keosu-menuController" class=" row-fluid menu">
+	<div ng-repeat="page in pages" class="menu-elements">
+		<a href="#/Page/{{ ::page.id }}">
+			<img ng-src="{{ getPath(page.icon, page.iconActive,page.id) }}"  ng-class="getClass(page.id)" />
+		</a>
+	</div>
+</div>
+
+
+</div>
+</div>
+<div class="">
+	<div class="container-fluid">
+		<div id="body" class="zone" ng-controller="keosu-last-articleController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":17,"pageId":5,"gadgetParam":{"articlesPerPage":3,"tag":null,"cache":10,"timeout":0},"appParam":[]})'><!-- ARTICLE LIST -->
+<div ng-bind-html="error"></div>
+<div class="list-articles" ng-show="isList" ng-swipe-left="next()" ng-swipe-right="previous()">
+    <div class="panel list">
+        <div class="panel-body list-content">
+            <div class="row-fluid list-elements animated {{slide}}" ng-repeat="apage in pages">
+                <div class="media" ng-click="open(apage)">
+                    <div class="media-body list-title">
+                        <h6 class="title" ng-bind-html="apage.title"></h6>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <button ng-show="!isFirstPage" ng-click="previous()"
+        class="previous btn btn-default btn-page animated fadeIn prev_btn">Prev</button>
+    <button ng-show="!isLastPage" ng-click="next()"
+        class="next btn btn-default btn-page pull-right animated fadeIn next_btn" >Next</button>
+</div>
+
+<!-- ONE ARTICLE -->
+<div ng-show="isArticle" class="one-article animated zoomIn">
+	<keosu-share object="article" url="article.shareUrl"></keosu-share>
+	<div class="row-fluid">
+		<h4 class="title" ng-bind-html="article.title"></h4>
+	</div>
+	<hr>
+	<div class="gadget-content">
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div ng-bind-html="article.content"></div>
+			</div>
+		</div>
+	</div>
+	<ul class="img-list">
+		<li ng-repeat="img in article.attachments">
+			<img class="center" ng-if="img" ng-src="{{ img.path }}" alt="" />
+		</li>
+	</ul>
+	<keosu-comments object-id="article.id" object-name="article.dataModelObjectName" enable-comments="article.enableComments" ></keosu-comments>
+</div>
+</div>
+	</div>
+</div>

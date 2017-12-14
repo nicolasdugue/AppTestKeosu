@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top classic-navbar" role="banner"><div class="backButton" ng-click="back()" ng-show="previousButton">
+        <span class="fui-arrow-left animated fadeIn btn" aria-hidden="true"></span>
+    </div>
+    <div class="backButton" ng-click="back()" ng-show="closeButton">
+        <span class="glyphicon glyphicon-remove animated fadeIn btn" aria-hidden="true"></span>
+    </div>
+    <div>
+        <h2 class="title">{{::appName}}</h2>
+    </div>
+</nav><div class="content">
+    <div class="container-fluid">
+        <div id="body" class="zone" ng-controller="keosu-mapController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":7,"pageId":2,"gadgetParam":{"poiId":1,"zoom":1,"cache":10,"timeout":10},"appParam":[]})'><div ng-bind-html="error"></div>
+<h4 class="title">{{ title }}</h4>
+<hr>
+<div class="gadget-content">
+	<div class="row-fluid">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div ng-bind-html="content"></div>
+		</div>
+	</div>
+</div>
+<hr>
+<div id="map_canvas"></div>
+<keosu-comments object-id="map.id" object-name="map.dataModelObjectName" enable-comments="map.enableComments" ></keosu-comments>
+
+</div>
+    </div>
+</div>
+
+<div class="offline">
+    <div ng-show="{{offline}}">Network unreachable</div>
+</div>
+
+<footer id="menu" class="zone classic-menu navbar-fixed-bottom" ng-controller="keosu-menuController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":12,"pageId":2,"gadgetParam":{"menu-id":1},"appParam":[]})'><div ng-controller="keosu-menuController" class=" row-fluid menu">
+	<div ng-repeat="page in pages" class="menu-elements">
+		<a href="#/Page/{{ ::page.id }}">
+			<img ng-src="{{ getPath(page.icon, page.iconActive,page.id) }}"  ng-class="getClass(page.id)" />
+		</a>
+	</div>
+</div>
+
+
+</footer>

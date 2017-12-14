@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed-top classic-navbar" role="banner"><div class="header">
+		<div class="header header-slide" ng-click="menuOpen =!menuOpen" ng-class="{'open' : menuOpen}">
+            <div class="icon-menu2"></div>
+        </div>
+		<div class="title"><b>{{::appName}}</b></div>
+    </div>
+</nav><div class="block-button">
+	<div class="" ng-click="back()" ng-show="closeButton">
+		<span class="glyphicon glyphicon-remove animated fadeIn btn" aria-hidden="true"></span>
+	</div>
+</div>
+<div style="overflow-x: hidden"></div>
+<div class="slide-menu" ng-class="{'open' : menuOpen}">
+	<div id="menu" class="zone" ng-controller="keosu-menuController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":12,"pageId":1,"gadgetParam":{"menu-id":1},"appParam":[]})'><div ng-controller="keosu-menuController" class=" row-fluid menu">
+	<div ng-repeat="page in pages" class="menu-elements">
+		<a href="#/Page/{{ ::page.id }}">
+			<img ng-src="{{ getPath(page.icon, page.iconActive,page.id) }}"  ng-class="getClass(page.id)" />
+		</a>
+	</div>
+</div>
+
+
+</div>
+</div>
+<div class="">
+	<div class="container-fluid">
+		<div id="body" class="zone" ng-controller="keosu-articleController" ng-init='init({"host":"http:\/\/localhost\/keosu\/web\/app_dev.php\/","gadgetId":1,"pageId":1,"gadgetParam":{"article-id":2,"offline":false,"cache":10,"timeout":10},"appParam":[]})'><div class="animated fadeIn">
+    <div ng-bind-html="error"></div>
+    <keosu-share object="article" url="article.shareUrl"></keosu-share>
+    <div class="row-fluid">
+        <h4 class="title" ng-bind-html="::article.title"></h4>
+    </div>
+    <hr>
+    <div class="gadget-content article">
+        <div class="row-fluid">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div ng-bind-html="::article.content"></div>
+            </div>
+        </div>
+    </div>
+    <ul class="img-list" style="list-style: none; margin: 0;padding: 0;">
+        <li ng-repeat="img in article.attachments">
+            <img class="center" ng-if="img" ng-src="{{ ::img.path }}" alt=""
+                 style="width:100%; height: auto; overflow:hidden;"/>
+        </li>
+    </ul>
+    <keosu-comments object-id="article.id" object-name="article.dataModelObjectName"
+                    enable-comments="article.enableComments"></keosu-comments>
+</div>
+</div>
+	</div>
+</div>
